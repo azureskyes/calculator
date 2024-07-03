@@ -3,14 +3,19 @@ clearAll();
 
 
 function clearAll() {
-    let initializeOperand = document.getElementById('display').value = '0';
-    let firstOperand = initializeOperand;
-    let secondOperand = "";
-    let operator = "";
-    let calcResult = "";
-    let isOperatorPressed = false;
-    let isOperationTrue = false;
-    let shouldResetDisplay = false;
+    initializeOperand = document.getElementById('display').value = '0';
+    firstOperand = 0;
+    secondOperand = '';
+    currentOperator = '';
+    equation = '';
+    calcResult = '';
+    isOperatorPressed = false;
+    isEqualsPressed = false;
+    isOperationTrue = false;
+    shouldResetDisplay = false;
+    console.log("firstOperand is " + firstOperand + ";",
+            "secondOperand is " + 'null' + ";",
+            "isOperatorPressed is " + isOperatorPressed + ";");
 }
 
 //DOM selectors
@@ -25,12 +30,21 @@ const displayLast = document.getElementById("displayLast");
 
 
 function appendToDisplay(input) {
+
     if (display.value === '0' || shouldResetDisplay) {
         display.value = '';
         shouldResetDisplay = false;
+    } display.value += input;
+
+    if (parseFloat(display.value) > 0 && isOperatorPressed == false) {
+        firstOperand = parseFloat(display.value);
+    } else if (parseFloat(display.value) > 0 && isOperatorPressed == true) {
+        secondOperand += input;
     }
-    display.value += input;
-}
+    console.log("firstOperand is " + firstOperand);
+    console.log("secondOperand is " + secondOperand);
+
+};
 
 function appendToDisplayLast() {
     displayLast.value = (firstOperand + "" + operator + "" + secondOperand);
@@ -41,10 +55,17 @@ function clearEntry() {
         .slice(0, -1)
 };
 
-function setOperator(op) {
+function setOperator(operator) {
+    isOperatorPressed = true;
+    currentOperator = operator;
+    console.log("operator is " + operator);
+    console.log("Is operator pressed?: " + isOperatorPressed)
+}
 
-    operator = op;
-    setOperator = true;
+function captureSecondOperand(input) {
+    if (firstOperand && isOperatorPressed == true) {
+
+    }
 }
 
 function calculate() {
