@@ -1,9 +1,17 @@
 //first initialized values
-let firstOperand = 0;
-let secondOperand = "";
-let operator = "";
-let calcResult = "";
-let isOperatorPressed = false;
+clearAll();
+
+
+function clearAll() {
+    let initializeOperand = document.getElementById('display').value = '0';
+    let firstOperand = initializeOperand;
+    let secondOperand = "";
+    let operator = "";
+    let calcResult = "";
+    let isOperatorPressed = false;
+    let isOperationTrue = false;
+    let shouldResetDisplay = false;
+}
 
 //DOM selectors
 const operatorButtons = document.querySelector('operator-btn');
@@ -11,15 +19,16 @@ const numberButtons = document.querySelector('number-btn');
 const pointButton = document.querySelector('point-btn');
 const equalsButton = document.getElementById('equalsButton');
 
-
-
-
-
 const display = document.getElementById("display");
 const displayLast = document.getElementById("displayLast");
 
 
+
 function appendToDisplay(input) {
+    if (display.value === '0' || shouldResetDisplay) {
+        display.value = '';
+        shouldResetDisplay = false;
+    }
     display.value += input;
 }
 
@@ -27,28 +36,13 @@ function appendToDisplayLast() {
     displayLast.value = (firstOperand + "" + operator + "" + secondOperand);
 }
 
-function clearAll() {
-    display.value = "";
-    displayLast.value = "";
-    let firstOperand = "";
-    let secondOperand = "";
-    let operator = "";
-    let calcResult = "";
-}
-
 function clearEntry() {
     display.value = display.value
         .slice(0, -1)
 };
 
-
-function setFirstOperand() {
-    //if display.value 
-
-};
-
 function setOperator(op) {
-    
+
     operator = op;
     setOperator = true;
 }
