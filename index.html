@@ -8,10 +8,11 @@
 </head>
 <body>
 <div id="calculator">
-    <input id="displayLast" readonly>
-    <input id="display" readonly>
-  
     <div class="screen-container">
+    <!--<input id="displayLast" readonly>
+    <input id="display" readonly>-->
+     <div id="displayLast"></div>
+     <div id="display"></div>
     </div>
         <div id="clearButtonsContainer">
         <button onclick="clearAll()" id="clearAllButton">A C</button>
@@ -30,7 +31,7 @@
         <button onclick="appendToDisplay('1')" class="number-btn">1</button>
         <button onclick="appendToDisplay('2')" class="number-btn">2</button>
         <button onclick="appendToDisplay('3')" class="number-btn">3</button>
-        <button onclick="appendToDisplay('÷'), setOperator('+')" class="operator-btn">÷</button>
+        <button onclick="appendToDisplay('÷'), setOperator('÷')" class="operator-btn">÷</button>
         <button onclick="appendToDisplay('.')" class="point-btn">.</button>
         <button onclick="appendToDisplay('0')" class="number-btn">0</button>
         <button onclick="calculate()" id="equalsButton">=</button>
@@ -38,7 +39,9 @@
     </div>
 
 <script src="index.js" defer></script>
+
 </div>
+<div class="copyright-mark"><a href="https://github.com/azureskyes" style="text-decoration: none">a z u r e s k y e s &copy 2 0 2 4</a></div>
 </div>
 </body>
 </html>

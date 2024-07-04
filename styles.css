@@ -20,22 +20,32 @@ body {
     overflow: hidden;
 }
 
+
 #display, #displayLast {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 100%;
     padding: 20px;
     font-size: 5rem;
     text-align: right;
     border: none;
-    background-color: rgba(51, 51, 51, .7);
+    background-color: rgba(51, 51, 51, .1);
     color: white;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #display {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    margin-bottom:
+    margin-bottom: -10px;
+    color:rgba(255, 255, 255, 01);
+}
+
+#displayLast {
+    font-size: 2.5em;
+    color:rgba(197, 197, 197, 0.7);
 }
 
 #keys{
@@ -101,4 +111,21 @@ button:active{
 }
 .operator-btn:active{
     background-color: hsl(35, 80%, 75%);
+}
+
+.copyright-mark {
+    text-align: center;
+    margin-bottom: 30px;
+    /* Positioning */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, .4);
+    font-size: 1.5em;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
 }
