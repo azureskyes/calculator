@@ -120,12 +120,6 @@ function clearEntry() {
 
 
 
-function captureSecondOperand(input) {clearAll();
-
-    if (firstOperand && isOperatorPressed == true) {
-
-    }
-}
 
 function calculate() {
     if (!isOperatorPressed) {
